@@ -32,7 +32,7 @@ with open('Пределы для точек скада.csv', 'r', encoding='cp12
     limits_dict = {}
     for line in f.read().splitlines()[1:]:
         cat, mn, mx = line.split(';')
-        limits_dict[cat.lower()] = (int(mn), int(mx))    
+        limits_dict[cat.lower()] = (float(mn), float(mx))    
 
 async def main(devices_dict, limits_dict):
     types_dict = {'BI': binary_input, 'AI': analog_input, 'BO': binary_output, 
@@ -62,7 +62,7 @@ async def main(devices_dict, limits_dict):
         while True:
             for dev, id in zip(all_devices_list, devices_dict):
                 for point in devices_dict[id]:
-                    if point[1] in ('AI', 'AO', 'AV') and not 'уставка' in point[0]:
+                    if point[1] in ('AI', 'AO', 'AV') and 'уставка' not in point[0]:
                         mn, mx = limits_dict[point[-1]]
                         dev[point[-2]].presentValue = random.uniform(mn, mx)
             await asyncio.sleep(2)
