@@ -1,0 +1,11 @@
+aiosqlite==0.22.1
+altgraph==0.17.5
+BAC0==2026.7.25
+bacpypes3==0.0.106
+colorama==0.4.6
+packaging==26.3
+pyinstaller==6.22.2
+pyinstaller-hooks-contrib==2026.7
+python-dotenv==1.2.3
+pytz==2026.3.post1
+setuptools==84.0.0
