@@ -1,0 +1,9 @@
+Категория;Мин;Макс
+Temp;0;30
+Power;0;30
+Current;0;30
+Voltage;0;30
+Energy;0;30
+Cos;0;30
+Pressure;0;30
+Other;0;100
