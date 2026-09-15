@@ -1,3 +1,4 @@
 bacnet_env/
 __pycache__/
 *.csv
+*.spec
