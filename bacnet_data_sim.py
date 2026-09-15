@@ -80,7 +80,7 @@ async def main(devices_dict, limits_dict, ip_addr):
                 for point in devices_dict[ident]:
                         mn, mx = limits_dict[point.point_cat]
                         if point.obj_point_type in ('AI', 'AV') and point.need_value:
-                            dev[point.obj_name].presentValue = random.uniform(mn, mx)
+                            dev[point.obj_name].presentValue = mn + ((math.sin(time.time()/50 + int(point.obj_point_id))+ 1)/2) * (mx - mn) + random.uniform(0, 0.05*(mx-mn))
             await asyncio.sleep(2)
     finally:
         for device in all_devices_list:
